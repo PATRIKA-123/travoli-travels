@@ -12,58 +12,51 @@ export default function ContactForm({ addToast }) {
     e.preventDefault();
     setLoading(true);
 
-    // 1. Supabase mein data save karna
     const { error } = await supabase.from('contact_submissions').insert([form]);
 
     if (!error) {
       setSubmitted(true);
-      addToast({ type: 'success', title: 'Enquiry Sent!', message: "We'll get back to you soon." });
-
-      // 2. WhatsApp par redirect ka logic (Line breaks ke liye %0A ka use kiya hai)
-      const message = `*New Enquiry from Website!* 🚀%0A%0A*Name:* ${form.name}%0A*Phone:* ${form.phone}%0A*Service:* ${form.service}%0A*Message:* ${form.message}`;
-      
-      const whatsappUrl = `https://wa.me/${contactInfo.whatsapp}?text=${message}`;
-      
-      // Automatic WhatsApp tab open karna
-      window.open(whatsappUrl, '_blank');
-      
+      addToast({ type: 'success', title: 'Enquiry Sent!', message: "Data saved successfully." });
     } else {
-      addToast({ type: 'error', title: 'Error', message: 'Something went wrong. Please try again.' });
-      console.error('Supabase Error:', error);
+      addToast({ type: 'error', title: 'Error', message: 'Something went wrong.' });
+      console.error('Error:', error);
     }
     setLoading(false);
   }
+
+  // WhatsApp Message Format
+  const whatsappMessage = `*New Enquiry from Website!* 🚀%0A%0A*Name:* ${form.name}%0A*Phone:* ${form.phone}%0A*Service:* ${form.service}%0A*Message:* ${form.message}`;
 
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-start max-w-5xl mx-auto">
-          
-          {/* LEFT COLUMN: CONTACT CARDS */}
           <div className="space-y-8 border-l-4 border-teal-600 pl-8">
-            <div>
-              <span className="text-teal-600 font-bold tracking-[0.2em] uppercase text-xs">Get in Touch</span>
-              <h2 className="font-heading text-4xl mt-3">Let’s Start Planning</h2>
-              <p className="text-slate-500 mt-4 font-body leading-relaxed">
-                Have a query? Reach out directly or fill out the form.
-              </p>
-            </div>
+            <h2 className="font-heading text-4xl">Let’s Start Planning</h2>
           </div>
 
-          {/* RIGHT COLUMN: FORM */}
           <div className="bg-slate-50 p-10 border border-slate-100">
             <AnimatePresence mode="wait">
               {submitted ? (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-12 text-center">
                   <div className="w-16 h-16 bg-teal-100 mx-auto rounded-full flex items-center justify-center mb-6 text-teal-600">✓</div>
                   <h3 className="text-2xl font-heading">Enquiry Sent!</h3>
-                  <p className="text-slate-500 mt-2">Redirecting to WhatsApp...</p>
+                  <p className="text-slate-500 mt-2 mb-6">Click below to confirm on WhatsApp:</p>
+                  
+                  <a 
+                    href={`https://wa.me/${contactInfo.whatsapp}?text=${whatsappMessage}`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block bg-green-600 text-white px-8 py-4 font-bold uppercase hover:bg-green-700 transition-all shadow-lg"
+                  >
+                    Confirm on WhatsApp
+                  </a>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <h3 className="font-heading text-xl">Request a Quote</h3>
                   {['name', 'phone'].map((field) => (
-                    <input key={field} required placeholder={field.toUpperCase()} className="w-full bg-transparent border-b border-slate-300 py-3 focus:border-teal-600 outline-none transition-colors uppercase text-sm" value={form[field]} onChange={(e) => setForm({...form, [field]: e.target.value})} />
+                    <input key={field} required placeholder={field.toUpperCase()} className="w-full bg-transparent border-b border-slate-300 py-3 focus:border-teal-600 outline-none uppercase text-sm" value={form[field]} onChange={(e) => setForm({...form, [field]: e.target.value})} />
                   ))}
                   <select required className="w-full bg-transparent border-b border-slate-300 py-3 outline-none uppercase text-sm text-slate-500" value={form.service} onChange={(e) => setForm({...form, service: e.target.value})}>
                     <option value="">SELECT SERVICE</option>
