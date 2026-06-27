@@ -25,8 +25,8 @@ export default function Hero() {
             loading="eager"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-950/90 via-teal-900/80 to-slate-900/75" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-950/90 via-teal-900/80 to-slate-900/75 pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
       </div>
 
       {/* Accents */}
