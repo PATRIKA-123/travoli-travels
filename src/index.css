@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-white text-slate-800 antialiased;
+  }
+  h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; }
+  *:focus-visible { @apply outline-none ring-2 ring-teal-600 ring-offset-2; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-teal-600 text-white px-6 py-3 font-semibold font-body text-sm tracking-wide uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-teal-600/30 hover:bg-teal-700 active:translate-y-0 active:shadow-none;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-teal-600 text-teal-600 px-6 py-3 font-semibold font-body text-sm tracking-wide uppercase transition-all duration-200 hover:bg-teal-600 hover:text-white hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0;
+  }
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.2em] uppercase text-teal-600 font-body;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading text-slate-900 leading-tight;
+  }
+  .form-input {
+    @apply w-full border border-slate-300 bg-white px-4 py-3 text-slate-800 text-sm font-body placeholder-slate-400 transition-all duration-150 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20;
+  }
+}
+
+@layer utilities {
+  .font-body { font-family: 'Inter', system-ui, sans-serif; }
+  .font-heading { font-family: 'DM Serif Display', Georgia, serif; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
