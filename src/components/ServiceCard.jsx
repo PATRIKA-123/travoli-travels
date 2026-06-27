@@ -5,6 +5,7 @@ import { contactInfo } from '../data/siteContent';
 export default function ServiceCard({ id, title, image }) {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
+    name: '',
     destination: '',
     adults: '',
     children: '',
@@ -34,6 +35,7 @@ export default function ServiceCard({ id, title, image }) {
     e.preventDefault();
     const phone = contactInfo?.whatsapp || '';
     const message = `*Holiday Inquiry: ${title}*%0A
+    Name: ${formData.name}%0A
     Destination: ${formData.destination}%0A
     Adults: ${formData.adults}%0A
     Children: ${formData.children}%0A
@@ -81,6 +83,7 @@ export default function ServiceCard({ id, title, image }) {
             >
               <h2 className="text-white text-2xl mb-6 font-heading">Plan Your Escape</h2>
               <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
+                <input required placeholder="Full Name" className={inputClass} onChange={(e) => setFormData({...formData, name: e.target.value})} />
                 <input required placeholder="Destination" className={inputClass} onChange={(e) => setFormData({...formData, destination: e.target.value})} />
                 <div className="grid grid-cols-2 gap-4">
                   <input type="number" required placeholder="Adults" className={inputClass} onChange={(e) => setFormData({...formData, adults: e.target.value})} />
