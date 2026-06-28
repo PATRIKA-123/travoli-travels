@@ -9,7 +9,7 @@ const galleryImages = [
   { src: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1600', label: 'Switzerland', tag: 'Mountains' },
   { src: 'https://images.pexels.com/photos/2614818/pexels-photo-2614818.jpeg?auto=compress&cs=tinysrgb&w=800', label: 'Paris', tag: 'Romance' },
   { src: 'https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=800', label: 'Thailand', tag: 'Adventure' },
-  { src: 'https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=800', label: 'Japan', tag: 'Cultural' },
+  { src: 'https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8amFwYW58ZW58MHx8MHx8fDA%3D', label: 'Japan', tag: 'Cultural' },
 ];
 
 function GalleryCard({ img, onClick }) {
