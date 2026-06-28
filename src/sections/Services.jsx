@@ -4,7 +4,9 @@ import ServiceCard from '../components/ServiceCard';
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-slate-50">
+    // Yahan maine background mein ek light gray diya hai jo premium lagta hai
+    // aur sath mein upar-niche thoda soft border effect diya hai
+    <section id="services" className="py-24 bg-slate-50/50 border-y border-slate-100">
       <div className="max-w-[1500px] mx-auto px-6">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -33,11 +35,14 @@ export default function Services() {
               }}
               className="w-full"
             >
-              <ServiceCard
-                id={service.id}
-                title={service.title}
-                image={service.image}
-              />
+              {/* Card container mein hum thoda transition aur shadow add kar rahe hain */}
+              <div className="h-full bg-white rounded-2xl p-1 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2">
+                <ServiceCard
+                  id={service.id}
+                  title={service.title}
+                  image={service.image}
+                />
+              </div>
             </motion.div>
           ))}
         </motion.div>
