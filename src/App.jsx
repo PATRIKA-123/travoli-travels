@@ -10,6 +10,7 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
 import ContactDock from './components/ContactDock';
+import Gallery from './sections/Gallery';
 
 export default function App() {
   const [toasts, setToasts] = useState([]);
@@ -29,6 +30,7 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+          <Gallery />
         <About />
         <Testimonials />
         <FAQAccordion />
