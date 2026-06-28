@@ -5,7 +5,7 @@ export const brand = {
   phoneDisplay: '+91 79779 05092',
   whatsapp: '917977905092',
   whatsappMessage: "Hi Travoli! I'd like to enquire about your travel services.",
-  location: ' Maharashtra',
+  
 };
 
 export const hero = {
@@ -159,6 +159,6 @@ export const contactInfo = {
   phoneDisplay: '+917977905092',
   whatsapp: '917977905092',
   whatsappMessage: "Hi Travoli! I'd like to enquire about your travel services.",
-  location: 'Maharashtra',
+  
   hours: 'Mon – Sat: 10:00 AM – 7:00 PM',
 };
