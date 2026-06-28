@@ -37,7 +37,7 @@ export default function Footer() {
               <span className="font-heading text-xl text-white">{brand.name}</span>
             </a>
             <p className="text-teal-300/70 text-sm font-body leading-relaxed mb-5">
-              Mumbai's trusted travel partner for holiday packages, international flights, and forex services.
+              Trusted travel partner for holiday packages, international flights, and forex services.
             </p>
             <div className="space-y-2">
               <a

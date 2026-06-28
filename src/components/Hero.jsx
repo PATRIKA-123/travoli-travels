@@ -38,7 +38,7 @@ export default function Hero() {
           <motion.div {...fadeUp(0.1)}>
             <span className="inline-flex items-center gap-3 text-teal-300 text-xs font-semibold tracking-[0.25em] uppercase font-body mb-6">
               <span className="w-10 h-px bg-teal-400" />
-              Mumbai's Travel Partner
+               Your Travel Partner
             </span>
           </motion.div>
 

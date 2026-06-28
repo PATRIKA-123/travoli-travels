@@ -5,13 +5,13 @@ export const brand = {
   phoneDisplay: '+91 79779 05092',
   whatsapp: '917977905092',
   whatsappMessage: "Hi Travoli! I'd like to enquire about your travel services.",
-  location: 'Mumbai, Maharashtra',
+  location: ' Maharashtra',
 };
 
 export const hero = {
   headline: 'Travel the World Without the Hassle',
   subheadline:
-    "From handcrafted holiday packages to seamless international flights and competitive forex — Travoli brings the world to Mumbai's doorstep.",
+    "From handcrafted holiday packages to seamless international flights and competitive forex — Travoli brings the world directly to you.",
   cta1: { label: 'Get a Free Quote', href: '#contact' },
   cta2: { label: 'WhatsApp Us', href: '#whatsapp' },
   stats: [
@@ -66,9 +66,9 @@ export const services = [
 ];
 
 export const about = {
-  headline: "Mumbai's Trusted Travel Partner",
+  headline: "Your Trusted Travel Partner",
   body: [
-    "Travoli was born from a simple belief — travel should be joyful, not stressful. Based out of Mumbai, we've been curating exceptional travel experiences for individuals, families, and corporates across India.",
+    "Travoli was born from a simple belief — travel should be joyful, not stressful.  We've been curating exceptional travel experiences for individuals, families, and corporates across the country.",
     'Whether you\'re planning your first international trip or your fiftieth, our expert team handles every detail — from visa documentation and flight bookings to hotel stays and forex — so you can focus on making memories.',
   ],
   values: [
@@ -84,15 +84,15 @@ export const testimonials = [
   {
     id: 1,
     name: 'Priya Mehta',
-    location: 'Andheri, Mumbai',
-    text: "Travoli planned our Europe trip end-to-end. The itinerary was perfect — we didn't have to worry about a single thing. The forex rates were the best we found anywhere in the city!",
+    location: 'Verified Traveller',
+    text: "Travoli planned our Europe trip end-to-end. The itinerary was perfect — we didn't have to worry about a single thing. The forex rates were the best we found anywhere !",
     rating: 5,
     trip: 'Europe 14-Day Tour',
   },
   {
     id: 2,
     name: 'Rohit & Sneha Joshi',
-    location: 'Thane',
+    location: 'Verified Traveller',
     text: 'Our Maldives honeymoon was absolutely magical. Travoli got us an incredible resort deal, sorted our forex, and were available on WhatsApp the entire trip. Highly recommended!',
     rating: 5,
     trip: 'Maldives Honeymoon',
@@ -100,7 +100,7 @@ export const testimonials = [
   {
     id: 3,
     name: 'Arjun Kapoor',
-    location: 'Bandra, Mumbai',
+    location: 'Verified Traveller',
     text: 'Got the cheapest Business Class ticket to Dubai through Travoli. Fast, professional, and no hidden fees. My go-to agent for all corporate travel now.',
     rating: 5,
     trip: 'Business Travel – Dubai',
@@ -108,7 +108,7 @@ export const testimonials = [
   {
     id: 4,
     name: 'Sunita Desai',
-    location: 'Borivali, Mumbai',
+    location: 'Verified Traveller',
     text: 'Booked a family trip to Thailand — 6 people, different preferences. The Travoli team managed everything beautifully. Kids loved it, parents were happy. What more can you ask?',
     rating: 5,
     trip: 'Thailand Family Trip',
@@ -159,6 +159,6 @@ export const contactInfo = {
   phoneDisplay: '+917977905092',
   whatsapp: '917977905092',
   whatsappMessage: "Hi Travoli! I'd like to enquire about your travel services.",
-  location: 'Mumbai, Maharashtra',
+  location: 'Maharashtra',
   hours: 'Mon – Sat: 10:00 AM – 7:00 PM',
 };
